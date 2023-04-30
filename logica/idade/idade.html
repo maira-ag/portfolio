@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+    <link rel="stylesheet" href="idade.css">
+</head>
+<body>
+    <h1>Calcule sua idade</h1>
+    <button onclick="idade()">Clique aqui para começar! </button>  
+</body>
+</html>
+<script>
+        function idade() {
+        var n = prompt("Qual o seu nome?")
+        var a = prompt("Olá " + n + "! Em que ano você nasceu?")
+        var a2 = 2023 - a
+
+        if (a2 >= 18) {
+            alert("Bem-vindo " + n + ", neste ano você completa " + a2 + " anos, portanto é maior de idade.")
+        }
+        
+        else{
+            alert("Bem-vindo " + n + ", neste ano você completa " + a2 + " anos, portanto é menor de idade.")
+        }
+    }
+</script>

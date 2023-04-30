@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Conversor de temperatura</h1>
+    <input type="number" id="temperatura" placeholder="Digite a temperatura" class="txt"><br>
+    <input id="cf" type="radio" name="tipo"> Celcius para Fahrenheit </input><br>
+    <input id="ck" type="radio" name="tipo"> Celcius para Kelvin </input><br>
+    <input id="fc" type="radio" name="tipo"> Fahrenheit para Celcius </input><br>
+    <input id="fk" type="radio" name="tipo"> Fahrenheit para Kelvin </input><br>
+    <input id="kc" type="radio" name="tipo"> Kelvin para Celcius </input><br>
+    <input id="kf" type="radio" name="tipo"> Kelvin para Fahrenheit </input><br>
+    <button onclick="converter()" class="butao">Converter</button>
+    <p class="resultado" id="Resultado">Resultado</p>
+</body>
+<script>
+    function converter()
+    {
+        var temperatura = Number(document.getElementById("temperatura").value)
+        var resultado = 0
+        if(document.getElementById("cf").checked){
+            resultado = temperatura * (9/5) + 32
+        }
+        else if(document.getElementById("ck").checked){
+            resultado = temperatura + 273
+        }
+        else if(document.getElementById("fc").checked){
+            resultado = (temperatura - 32) / (9/5)
+        }
+        else if(document.getElementById("fk").checked){
+            resultado = (temperatura - 32) * (5/9) + 273
+        }
+        else if(document.getElementById("kc").checked){
+            resultado = temperatura - 273
+        }
+        else if(document.getElementById("kf").checked){
+            resultado = (temperatura - 273) * (9/5) + 32
+        }
+    document.getElementById("Resultado").innerHTML=resultado
+    }
+</script>
+</html>

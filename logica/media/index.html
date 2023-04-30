@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" type="text/css" href="style.css" />
+    <title>Media</title>
+</head>
+<body>
+    <br><br><br>
+    <h1>Calcule média</h1>
+    <button onclick="media()">Clique aqui para começar! </button>
+</body>
+</html>
+<script>
+function media()
+{
+var q = prompt("Digite a quantidade de números para a média!")
+var resultado, soma = 0
+for(var i = 1; i <= q; i++)
+{
+    soma += Number (prompt("Digite o "+i+"° número!"))
+}
+resultado = soma / q
+alert("A média é: " +resultado)
+}
+</script>

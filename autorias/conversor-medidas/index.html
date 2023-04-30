@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Conversor de Medidas</h1>
+
+	<form>
+		<label for="medida">Digite a medida a ser convertida:</label>
+		<input type="text" id="medida" name="medida"><br><br>
+
+		<label for="conversao">Escolha o tipo de conversão:</label>
+		<select id="conversao" name="conversao">
+			<option value="pol_cm">Polegadas para Centímetros</option>
+			<option value="cm_pol">Centímetros para Polegadas</option>
+			<option value="pes_m">Pés para Metros</option>
+			<option value="m_pes">Metros para Pés</option>
+			<option value="mil_km">Milhas para Quilômetros</option>
+			<option value="km_mil">Quilômetros para Milhas</option>
+		</select><br><br>
+
+		<button class="botao" type="button" onclick="converter()">Converter</button><br><br>
+
+		<label for="resultado">Resultado:</label>
+		<input type="text" id="resultado" name="resultado" readonly>
+	</form>
+
+	<script>
+		function converter() {
+			var medida = parseFloat(document.getElementById("medida").value);
+			var conversao = document.getElementById("conversao").value;
+
+			if (conversao == "pol_cm") {
+				var resultado = medida * 2.54;
+				document.getElementById("resultado").value = resultado.toFixed(2) + " cm";
+			} else if (conversao == "cm_pol") {
+				var resultado = medida / 2.54;
+				document.getElementById("resultado").value = resultado.toFixed(2) + " polegadas";
+			} else if (conversao == "pes_m") {
+				var resultado = medida * 0.3048;
+				document.getElementById("resultado").value = resultado.toFixed(2) + " metros";
+			} else if (conversao == "m_pes") {
+				var resultado = medida / 0.3048;
+				document.getElementById("resultado").value = resultado.toFixed(2) + " pés";
+			} else if (conversao == "mil_km") {
+				var resultado = medida * 1.60934;
+				document.getElementById("resultado").value = resultado.toFixed(2) + " quilômetros";
+			} else if (conversao == "km_mil") {
+				var resultado = medida / 1.60934;
+				document.getElementById("resultado").value = resultado.toFixed(2) + " milhas";
+			}
+		}
+	</script>
+</body>
+</html>
